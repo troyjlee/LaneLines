@@ -34,7 +34,7 @@ width="300">
     
 5. Finally, we overlay the lines obtained from the Hough transform onto the original image.
 
-<img src="https://github.com/troyjlee/LaneLines/blob/master/P5.png" 
+<img src="https://github.com/troyjlee/LaneLines/blob/master/overlay.png" 
 width="300">
 
     
