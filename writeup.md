@@ -9,32 +9,46 @@ width="300">
 1. Convert the image to grayscale, and select a region of interest.  We select
 a trapezoidal region roughly following the expected slope of the lane lines and excluding the part of the image above the horizon.  Here is an example image after this step.
 
-    ![Step 1](P1.png =300x)
+<img src="https://github.com/troyjlee/LaneLines/blob/master/P1.png" 
+width="300">
+
 
 2. In the second step, we blur the image with a Gaussian filter to remove noise.  We chose a kernel of size 5.  We then threshold the image, setting all pixels of intensity less than 150 to black, and those greater than 150 to white. This 
 creates a black and white image.
 
-    ![Step 2](P2.png =300x)
+<img src="https://github.com/troyjlee/LaneLines/blob/master/P2.png" 
+width="300">
+
 
 3. In the third step we apply the Canny edge detection algorithm to the thresholded image.  We found this step to be fairly insensitive to the setting of the low and high threshold parameters in the Canny edge detection algorithm.  Ultimately, we set the low threshold to 1 and the high threshold to 5.
+
+<img src="https://github.com/troyjlee/LaneLines/blob/master/P3.png" 
+width="300">
     
-    ![Step 3](P3.png =300x)
     
 4. In the fourth step, we apply the probabilistic Hough line detection algorithm to extract lines out of the edges we found in step 3.  We found that errant lines were not too big of a problem in this step, and the more difficult case was getting enough signal out of the lane lines.  Thus we chose a low threshold of 10 and set the min line length to 1. For this part of the project we set the maximum line gap parameter to 10.  This leaves striped lanes unconnected, as in the target examples. 
 
-    ![Step 4](P4.png =300x)
+<img src="https://github.com/troyjlee/LaneLines/blob/master/P4.png" 
+width="300">
+
     
 5. Finally, we overlay the lines obtained from the Hough transform onto the original image.
 
-    ![Step 5](overlay.png =300x)
+<img src="https://github.com/troyjlee/LaneLines/blob/master/P5.png" 
+width="300">
+
     
 Here are the results of the pipeline on the other example images.
 
-![Solid White Curve](overlaysolidWhiteCurve.jpg =300x)
-![Solid White Right](overlaysolidWhiteRight.jpg =300x)
-![Solid Yellow Curve](overlaysolidYellowCurve.jpg =300x)
-![Solid Yellow Curve 2](overlaysolidYellowCurve2.jpg =300x)
-![White Car Lane Switch](overlaywhiteCarLaneSwitch.jpg =300x)
+<img src="https://github.com/troyjlee/LaneLines/blob/master/overlaysolidWhiteCurve.jpg" width="300">
+
+<img src="https://github.com/troyjlee/LaneLines/blob/master/overlaysolidWhiteRight.jpg" width="300">
+
+<img src="https://github.com/troyjlee/LaneLines/blob/master/overlaysolidYellowCurve.jpg" width="300">
+
+<img src="https://github.com/troyjlee/LaneLines/blob/master/overlaysolidYellowCurve2.jpg" width="300">
+
+<img src="https://github.com/troyjlee/LaneLines/blob/master/overlaywhiteCarLaneSwitch.jpg" width="300">
 
 
 ## Extending Lane Lines
