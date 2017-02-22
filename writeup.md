@@ -3,7 +3,8 @@
 ##Pipeline
 
 We will trace through the pipeline with this example image
-![Original](original.png =300x)
+<img src="https://github.com/troyjlee/LaneLines/blob/master/original.png" 
+width="300">
 
 1. Convert the image to grayscale, and select a region of interest.  We select
 a trapezoidal region roughly following the expected slope of the lane lines and excluding the part of the image above the horizon.  Here is an example image after this step.
